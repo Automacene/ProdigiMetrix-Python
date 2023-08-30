@@ -29,8 +29,7 @@ class Basic(Resource):
     
     async def log_now(self):
         """Logs a basic event and automatically generates the timestamp. """
-        response = await self.log(int(time.time()))
-        return response
+        return await self.log(int(time.time()))
 
     def log_buffer(self, timestamps: List[int]):
         #TODO: implement in backend

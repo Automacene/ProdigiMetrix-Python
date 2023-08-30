@@ -15,7 +15,7 @@ class Resource(ABC):
     async def _send(self, data: Dict[str, Any]):
         try:
             async with httpx.AsyncClient() as client:
-                response = await client.post(self.url, json=data, headers={"Authorization": f"Bearer {self.auth_token}"})
+                response = await client.post(self.url, json=data, headers={"Authorization": f"Bearer {self.auth_token}"}, timeout=120)
         except Exception as e:
             raise Exception(f"Could not log event: {e}")
         

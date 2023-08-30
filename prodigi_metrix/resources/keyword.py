@@ -36,5 +36,4 @@ class Keyword(Resource):
 
     async def log_now(self, keywords: List[str]):
         """Logs a keyword event and automatically generates the timestamp. """
-        response = await self.log(int(time.time()), keywords)
-        return response
+        return await self.log(int(time.time()), keywords)
