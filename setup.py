@@ -12,4 +12,3 @@ setup(
     license='MIT',
     keywords=['prodigilink', 'prodigilink metrix', 'ai', 'metrics']
 )
-
