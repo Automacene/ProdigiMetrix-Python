@@ -37,3 +37,7 @@ class Keyword(Resource):
     async def log_now(self, keywords: List[str]):
         """Logs a keyword event and automatically generates the timestamp. """
         return await self.log(int(time.time()), keywords)
+    
+    def get(self):
+        """Get the keyword metrics for the plugin."""
+        return self._get()

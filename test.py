@@ -24,6 +24,22 @@ def main():
     except Exception as e:
         print(f"Keyword test failed: {e}")
 
+    try:
+        metrics = basic.get()
+        assert metrics.status_code == 200
+        assert metrics.json()["plugin_name"] == "ProdigiLink Video"
+        print(metrics.json())
+    except AssertionError:
+        print(f"Basic get test failed: status code was {metrics.status_code}")
+
+    try:
+        metrics = keyword.get()
+        assert metrics.status_code == 200
+        assert metrics.json()["plugin_name"] == "ProdigiLink Video"
+        print(metrics.json())
+    except AssertionError:
+        print(f"Keyword get test failed: status code was {metrics.status_code}")
+
     print("All tests passed.")
     
 if __name__ == "__main__":

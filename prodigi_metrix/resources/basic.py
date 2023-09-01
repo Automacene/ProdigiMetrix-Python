@@ -34,3 +34,7 @@ class Basic(Resource):
     def log_buffer(self, timestamps: List[int]):
         #TODO: implement in backend
         pass
+
+    def get(self):
+        """Get the basic metrics for the plugin."""
+        return self._get()
